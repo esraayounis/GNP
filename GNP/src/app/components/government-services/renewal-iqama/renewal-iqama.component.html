@@ -1,0 +1,66 @@
+<form  [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+  <div class="form-group pad input-group-lg">
+    <div class="row justify-center">
+      <div class="col-lg-3 col-md-3 col-xs-12 group-select">
+        <div class="pos-relative">
+          <svg class="input-icon desktop-show" xmlns="http://www.w3.org/2000/svg" width="13" height="19.01"
+              viewBox="0 0 21 23">
+              <path id="Subtraction_2" data-name="Subtraction 2"
+                d="M19.5,23H1.5a1.5,1.5,0,0,1-1.055-.415A1.343,1.343,0,0,1,0,21.563V1.438A1.354,1.354,0,0,1,.445.427,1.473,1.473,0,0,1,1.5,0h18a1.463,1.463,0,0,1,1.067.427A1.368,1.368,0,0,1,21,1.438V21.563a1.361,1.361,0,0,1-.433,1.022A1.479,1.479,0,0,1,19.5,23ZM9.75,18.688h1.5a.736.736,0,0,0,.527-.213.685.685,0,0,0,0-1.011.736.736,0,0,0-.527-.213H9.75a.736.736,0,0,0-.527.213.685.685,0,0,0,0,1.011A.736.736,0,0,0,9.75,18.688Zm-6,0h3a.737.737,0,0,0,.527-.213.685.685,0,0,0,0-1.011.736.736,0,0,0-.527-.213h-3a.736.736,0,0,0-.527.213.685.685,0,0,0,0,1.011A.736.736,0,0,0,3.75,18.688Zm0-4.313h7.5a.736.736,0,0,0,.527-.213.685.685,0,0,0,0-1.011.736.736,0,0,0-.527-.213H3.75a.736.736,0,0,0-.527.213.685.685,0,0,0,0,1.011A.736.736,0,0,0,3.75,14.375Zm0-4.312h3a.736.736,0,0,0,.527-.213.685.685,0,0,0,0-1.011.736.736,0,0,0-.527-.213h-3a.736.736,0,0,0-.527.213.685.685,0,0,0,0,1.011A.736.736,0,0,0,3.75,10.063Zm6-5.75h-6a.736.736,0,0,0-.527.213.685.685,0,0,0,0,1.011.736.736,0,0,0,.527.213h6a.736.736,0,0,0,.527-.213.685.685,0,0,0,0-1.011.736.736,0,0,0-.527-.213Zm7.5,0h-4.5a.736.736,0,0,0-.527.213.685.685,0,0,0,0,1.011.736.736,0,0,0,.527.213h4.5a.736.736,0,0,0,.527-.213.685.685,0,0,0,0-1.011.736.736,0,0,0-.527-.213Zm0,4.313H9.75a.736.736,0,0,0-.527.213.685.685,0,0,0,0,1.011.736.736,0,0,0,.527.213h7.5a.736.736,0,0,0,.527-.213.685.685,0,0,0,0-1.011A.736.736,0,0,0,17.25,8.625Zm0,4.312h-3a.736.736,0,0,0-.527.213.685.685,0,0,0,0,1.011.736.736,0,0,0,.527.213h3a.736.736,0,0,0,.527-.213.685.685,0,0,0,0-1.011A.736.736,0,0,0,17.25,12.937Zm0,4.313h-3a.736.736,0,0,0-.527.213.685.685,0,0,0,0,1.011.737.737,0,0,0,.527.213h3a.737.737,0,0,0,.527-.213.685.685,0,0,0,0-1.011A.736.736,0,0,0,17.25,17.25Z"
+                transform="translate(0)" fill="#868d9a"></path>
+          </svg>
+          <label class="txt-black txt-sm desktop-show"> ابحث عن مركز</label>
+          <ng-select [items]="items" formControlName="specialization"
+             bindLabel="name" bindValue="value" (change)="selectSpecialization()"
+             class=" desktop-show form-control  input-element txt-sm font-m"  placeholder="اختار المركز">
+          </ng-select>
+  
+          <ng-select [items]="items" formControlName="specialization"
+             bindLabel="name" bindValue="value" (change)="selectSpecialization()"
+             class="mobile-show form-control  input-element txt-sm font-m"  placeholder="ابحث عن مركز">
+          </ng-select>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-3 col-xs-12 group-select">
+        <div class="pos-relative">
+          <svg class="input-icon desktop-show" xmlns="http://www.w3.org/2000/svg" width="12.386" height="16.766" viewBox="0 0 12.386 16.766">
+            <path id="__TEMP__SVG__" d="M12.943,2.25C9.524,2.25,6.75,4.664,6.75,7.639c0,4.79,6.193,11.377,6.193,11.377s6.193-6.587,6.193-11.377C19.136,4.664,16.362,2.25,12.943,2.25Zm0,8.383a2.437,2.437,0,0,1-2.477-2.4,2.479,2.479,0,0,1,4.954,0A2.44,2.44,0,0,1,12.943,10.633Z" transform="translate(-6.75 -2.25)" fill="#c4c4c4"></path>
+          </svg>
+          <label class="txt-black txt-sm desktop-show">ابحث عن المحافظة</label>
+          <ng-select [items]="items" formControlName="city"
+             bindLabel="name" bindValue="value" (change)="selectCity()"
+            class="desktop-show form-control input-element txt-sm font-m "  placeholder="اختار المحافظة">
+          </ng-select>
+
+          <ng-select [items]="items" formControlName="city"
+             bindLabel="name" bindValue="value" (change)="selectCity()"
+            class="mobile-show form-control input-element txt-sm font-m "  placeholder="ابحث عن المحافظة">
+          </ng-select>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-3 col-xs-12 group-select">
+        <div class="pos-relative">
+          <svg class="input-icon desktop-show" xmlns="http://www.w3.org/2000/svg" width="12.386" height="16.766" viewBox="0 0 12.386 16.766">
+            <path id="__TEMP__SVG__" d="M12.943,2.25C9.524,2.25,6.75,4.664,6.75,7.639c0,4.79,6.193,11.377,6.193,11.377s6.193-6.587,6.193-11.377C19.136,4.664,16.362,2.25,12.943,2.25Zm0,8.383a2.437,2.437,0,0,1-2.477-2.4,2.479,2.479,0,0,1,4.954,0A2.44,2.44,0,0,1,12.943,10.633Z" transform="translate(-6.75 -2.25)" fill="#c4c4c4"></path>
+          </svg>
+          <label class="txt-black txt-sm desktop-show">ابحث عن المنطقة</label>
+          <ng-select [items]="items" formControlName="area"
+             bindLabel="name" bindValue="value" (change)="selectArea()"
+            class="desktop-show form-control input-element txt-sm font-m "  placeholder="اختار المنطقة">
+          </ng-select>
+  
+          <ng-select [items]="items" formControlName="area"
+            bindLabel="name" bindValue="value" (change)="selectArea()"
+            class="mobile-show form-control input-element txt-sm font-m "  placeholder="ابحث عن المنطقة">
+          </ng-select>
+        </div>
+      </div>
+      
+      <div class="col-lg-2 col-md-2 col-xs-12">
+        <button class="btn  search-btn" type="button">{{'search' | translate}}</button>
+      </div>
+    </div>
+  </div>
+</form>

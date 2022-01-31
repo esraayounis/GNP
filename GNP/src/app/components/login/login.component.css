@@ -1,0 +1,6 @@
+@media screen and (min-width: 768px){
+.bg-login {
+   padding: 40px 70px 120px 0px;
+   background-position: 60% 10% !important;
+}
+}

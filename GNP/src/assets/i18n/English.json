@@ -1,0 +1,19 @@
+{
+  "home":"Home",
+  "services":"Services",
+  "contactus":"Contact Us",
+  "company":" About Us",
+  "offers":"Offers",
+  "login": "Login",
+  "register":"Register",
+  "logout":"Log Out",
+  "reservations":"Reservations",
+  "search":"Search",
+  "confirmPassRequired":"Confirm Password Required",
+  "passwordRequired":"Password Required",
+  "genderRequired":"Gender Required",
+  "birthdateRequired":"Birthdate Required",
+  "emailRequired":"Email Required",
+  "mobileRequired":"Mobile Required",
+  "nameRequired":"Full Name Required"
+}

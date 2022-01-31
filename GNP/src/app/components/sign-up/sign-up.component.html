@@ -1,0 +1,132 @@
+<section class="bg-login ">
+  <div class="pad-container ">
+    <form [formGroup]="registerForm" class="registration" (ngSubmit)="onClickSubmit(registerForm.value)">
+        <div class="container-fluid">
+         <div class="form-group  input-group-lg">
+           <h4 class="txt-center desktop-show">قم بتسجيل حسابك الآن</h4>
+           <div class="txt-center margin-top-bot">
+               <a class="facebook-btn btn" href="https://www.facebook.com/">سجل الدخول بواسطة فيسبوك <span class="pad-5">|</span> 
+                <img src="assets/imgs/login-page/facebook.svg"></a>
+           </div>
+           <span class="vl">أو</span>
+           <div class="row">
+               <div class="col-12">
+                <div class="pos-relative">
+                   <img  class="input-icon top-8" src="assets/imgs/login-page/user.svg">
+                   <input [ngClass]="{ '': submitted && registerForm.controls['name'].errors}" type="text"
+                   formControlName="name" class="custom-input  pad-r-40 " name="name"
+                   placeholder="الاسم كاملا" required="" />
+                   <div class="errorstyle" *ngIf="submitted && registerForm.controls['name'].errors">
+                    <span *ngIf="registerForm.controls['name'].errors?.['required']"
+                      class="validateFire">{{'nameRequired' | translate}}
+                    </span>
+                  </div>
+                  </div>
+               </div>
+               
+               <div class="col-12">
+                <div class="pos-relative">
+                   <img  class="input-icon top-8" src="assets/imgs/login-page/mobile.svg">
+                   <input [ngClass]="{ '': submitted && registerForm.controls['mobile'].errors}" type="tel"
+                   formControlName="mobile" class="custom-input  pad-r-40 " name="mobile" id="mobile"
+                   (keypress)="allowOnlyNumbers($event)"
+                   placeholder="رقم الموبيل" required/>
+                   <!-- <img src="assets/imgs/home/arrow-down-fill.svg">
+                   <img src="assets/imgs/login-page/saudi-flag.png"> -->
+                   <div class="errorstyle" *ngIf="submitted && registerForm.controls['mobile'].errors">
+                    <span *ngIf="registerForm.controls['mobile'].errors?.['required']"
+                      class="validateFire">{{'mobileRequired' | translate}}
+                    </span>
+                  </div>
+                  </div>
+               </div>
+        
+               <div class="col-12">
+                <div class="pos-relative">
+                   <img  class="input-icon top-8" src="assets/imgs/login-page/mail.svg">
+                   <input [ngClass]="{ '': submitted && registerForm.controls['email'].errors}" type="email"
+                   formControlName="email" class="custom-input  pad-r-40 " name="email"
+                   placeholder="البريد الإلكتروني" required/>
+                   <div class="errorstyle" *ngIf="submitted && registerForm.controls['email'].errors">
+                    <span *ngIf="registerForm.controls['email'].errors?.['required']"
+                      class="validateFire">{{'emailRequired' | translate}}
+                    </span>
+                  </div>
+                  </div>
+               </div>
+   
+               <div class="col-12">
+                <div class="pos-relative">
+                   <img  class="input-icon top-8" src="assets/imgs/login-page/birthdate.svg">
+                   <input [ngClass]="{ '': submitted && registerForm.controls['birthdate'].errors}" type="text"
+                   formControlName="birthdate" class="custom-input  pad-r-40 " name="birthdate"
+                   (keypress)="allowOnlyNumbers($event)"
+                   placeholder="تاريخ الميلاد" required />
+                   <div class="errorstyle" *ngIf="submitted && registerForm.controls['birthdate'].errors">
+                    <span *ngIf="registerForm.controls['birthdate'].errors?.['required']"
+                      class="validateFire">{{'birthdateRequired' | translate}}
+                    </span>
+                  </div> 
+                  </div>
+               </div>
+           </div>
+           <div class="row">
+               <div class="col-l2">
+                <div class="pos-relative">
+                  <img  class="input-icon top-8" src="assets/imgs/login-page/gender.svg">
+                   <ng-select [items]="genders" formControlName="gender"
+                      [ngClass]="{ '': submitted && registerForm.controls['gender'].errors}"
+                      bindLabel="value" bindValue="value" (change)="selectGender()"  name="gender" required
+                      class="custom-input top-13 pad-r-40"  placeholder="الجنس">
+                    </ng-select>
+                   <div class="errorstyle" *ngIf="submitted && registerForm.controls['gender'].errors">
+                    <span *ngIf="registerForm.controls['gender'].errors?.['required']"
+                      class="validateFire">{{'genderRequired' | translate}}
+                    </span>
+                   </div> 
+                </div>
+               </div>
+        
+               <div class="col-12">
+                 <div class="pos-relative">
+                   <img  class="input-icon top-12" src="assets/imgs/login-page/password.svg">
+                   <input [ngClass]="{ '': submitted && registerForm.controls['password'].errors}" type="password"
+                   formControlName="password" class="custom-input  pad-r-40 " name="password"
+                   placeholder="كلمة السر" required />
+                   <div class="errorstyle" *ngIf="submitted && registerForm.controls['password'].errors">
+                    <span *ngIf="registerForm.controls['password'].errors?.['required']"
+                      class="validateFire">{{'passwordRequired' | translate}}
+                    </span>
+                   </div> 
+                  </div>
+               </div>
+   
+               <div class="col-12">
+                <div class="pos-relative">
+                   <img  class="input-icon top-12" src="assets/imgs/login-page/password.svg">
+                   <input [ngClass]="{ '': submitted && registerForm.controls['confirmPass'].errors}" type="password"
+                   formControlName="confirmPass" class="custom-input  pad-r-40 " name="confirmPass"
+                   placeholder="تأكيد كلمة السر" required />
+                   <div class="errorstyle" *ngIf="submitted && registerForm.controls['confirmPass'].errors">
+                    <span *ngIf="registerForm.controls['confirmPass'].errors?.['required']"
+                      class="validateFire">{{'confirmPassRequired' | translate}}
+                    </span>
+                  </div> 
+                  </div>
+               </div>
+   
+               <div class="col-12">
+                   <p class="txt-xs txt-grayy">بتسجيل حسابك علي موقع رعاية 24/7 فأنت ضمنيا موافق علي الشروط و الأحكام الخاصة بخدماتنا Terms & Conditions</p>
+               </div>
+            
+               <div class="col-12 dis-flex justify-center">
+                   <button class="btn register-btn" type="submit">إنشاء حساب
+                    <i class="fa fa-spinner" *ngIf="loading"></i>
+                   </button>
+               </div>
+           </div>
+         </div>
+        </div>
+     </form>
+  </div>
+</section>

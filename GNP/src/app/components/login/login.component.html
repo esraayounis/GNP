@@ -1,0 +1,56 @@
+<section class="bg-login">
+  <div class="">
+    <form [formGroup]="loginForm" class="registration" (ngSubmit)="onClickSubmit(loginForm.value)">
+        <div class="container-fluid">
+         <div class="form-group  input-group-lg">
+           <h4 class="txt-center  desktop-show">قم بتسجيل حسابك الآن</h4>
+           <div class="txt-center margin-top-bot">
+               <a class="facebook-btn btn" href="https://www.facebook.com/">سجل الدخول بواسطة فيسبوك <span class="pad-5">|</span> 
+                <img src="assets/imgs/login-page/facebook.svg"></a>
+           </div>
+           <span class="vl">أو</span>
+           <div class="row">
+               <div class="col-12">
+                <div class="pos-relative">
+                   <img  class="input-icon top-8" src="assets/imgs/login-page/mail.svg">
+                   <input [ngClass]="{ '': submitted && loginForm.controls['userName'].errors}" type="email"
+                   formControlName="userName" class="custom-input  pad-r-40 " name="userName"
+                   placeholder="البريد الإلكتروني" required/>
+                   <div class="errorstyle" *ngIf="submitted && loginForm.controls['userName'].errors">
+                    <span *ngIf="loginForm.controls['userName'].errors?.['required']"
+                      class="validateFire">{{'emailRequired' | translate}}
+                    </span>
+                  </div>
+                  </div>
+               </div>
+
+               <div class="col-12">
+                <div class="pos-relative">
+                  <img  class="input-icon top-12" src="assets/imgs/login-page/password.svg">
+                  <input [ngClass]="{ '': submitted && loginForm.controls['password'].errors}" type="password"
+                  formControlName="password" class="custom-input  pad-r-40 " name="password"
+                  placeholder="كلمة السر" required />
+                  <div class="errorstyle" *ngIf="submitted && loginForm.controls['password'].errors">
+                  <span *ngIf="loginForm.controls['password'].errors?.['required']"
+                    class="validateFire">{{'passwordRequired' | translate}}
+                  </span>
+                  </div>
+                  </div>
+                </div>
+                
+                <div class="col-12">
+                  <p class="txt-xs txt-grayy">بتسجيل حسابك علي موقع رعاية 24/7 فأنت ضمنيا موافق علي الشروط و الأحكام الخاصة بخدماتنا Terms & Conditions</p>
+                </div>
+            
+                <div class="col-12 dis-flex justify-center">
+                    <button class="btn register-btn" type="submit">تسجيل الدخول
+                    <i class="fa fa-spinner" *ngIf="loading == true"></i>
+                    </button>
+                </div>
+             
+           </div>
+         </div>
+        </div>
+     </form>
+  </div>
+</section>

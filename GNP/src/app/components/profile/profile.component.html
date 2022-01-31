@@ -1,0 +1,57 @@
+<div class="container mobile-no-container">
+    <div class="terq-bg">
+        <div class="row change-cols custom-flex-row">
+            <div class="col-md-3 col-sm-3 col-xs-12 custom-float-left profile-menu custom-width-col">
+                <a class="menu-profile-btn show-in-mobile">
+                   <img src="assets/imgs/profile/menu.svg">
+                </a>
+                <nav id="nav-profile">
+                    <div class="nav-sections">
+                        <ul class="main-navigation">
+                            <li class="item" [class.active]="viewMode== 'my-info'" (click)="viewMode = 'my-info'">
+                                <a href="javascript:void(0)">
+                                    <i class="icon-arrow-chart mobile-float-left"></i>
+                                    <span>الملف الشخصي</span>
+                                </a>
+                            </li>
+                            <li class="item" [class.active]="viewMode== 'reservations'" (click)="viewMode ='reservations'"><a
+                                    href="javascript:void(0)">
+                                    <i class="icon-policy-icon mobile-float-left"></i>
+                                    <span>الحجوزات</span>
+                                </a></li>
+                            <li class="item" [class.active]="viewMode== 'faviorts'" (click)="viewMode = 'faviorts'"><a
+                                    href="javascript:void(0)">
+                                    <i class="icon-car mobile-float-left"></i>
+                                    <span>المفضلة</span>
+                                </a></li>
+
+                            <li class="item" [class.active]="viewMode== 'code'" (click)="viewMode ='code'"><a
+                                    href="javascript:void(0)">
+                                    <i class="icon-payslip mobile-float-left"></i>
+                                    <span>كود المستخدم</span>
+                                </a></li>
+                            <li class="item" [class.active]="viewMode== 'contact'"
+                                (click)="viewMode ='contact'"><a href="javascript:void(0)">
+                                    <i class="icon-payslip mobile-float-left"></i>
+                                    <span>كلم</span><span>12345</span>
+                                </a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-12 custom-float-right paddingZero cust-col-77">
+
+                <div class="custom-wrapper" [ngSwitch]="viewMode">
+                    <app-profile *ngSwitchCase="'my-info'"></app-profile>
+                    <app-reservations *ngSwitchCase="'reservations'"></app-reservations>
+                    <app-faviorts *ngSwitchCase="'faviorts'"></app-faviorts>
+                    <!-- <app-faviorts *ngSwitchCase="'code'"></app-faviorts>
+                    <app-faviorts *ngSwitchCase="'contact'"></app-faviorts> -->
+                    <div *ngSwitchDefault>Not Found</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

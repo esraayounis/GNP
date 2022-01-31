@@ -1,0 +1,45 @@
+<form  [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+  <div class="form-group pad input-group-lg">
+    <div class="row justify-center">
+      <div class="col-lg-3 col-md-3 col-xs-12 group-select">
+        <div class="pos-relative">
+          <svg class="input-icon desktop-show" xmlns="http://www.w3.org/2000/svg" width="12.386" height="16.766" viewBox="0 0 12.386 16.766">
+            <path id="__TEMP__SVG__" d="M12.943,2.25C9.524,2.25,6.75,4.664,6.75,7.639c0,4.79,6.193,11.377,6.193,11.377s6.193-6.587,6.193-11.377C19.136,4.664,16.362,2.25,12.943,2.25Zm0,8.383a2.437,2.437,0,0,1-2.477-2.4,2.479,2.479,0,0,1,4.954,0A2.44,2.44,0,0,1,12.943,10.633Z" transform="translate(-6.75 -2.25)" fill="#c4c4c4"></path>
+          </svg>
+          <label class="txt-black txt-sm desktop-show">ابحث عن المحافظة</label>
+          <ng-select [items]="items" formControlName="city"
+             bindLabel="name" bindValue="value" (change)="selectCity()"
+            class="desktop-show form-control input-element txt-sm font-m "  placeholder="اختار المحافظة">
+          </ng-select>
+
+          <ng-select [items]="items" formControlName="city"
+             bindLabel="name" bindValue="value" (change)="selectCity()"
+            class="mobile-show form-control input-element txt-sm font-m "  placeholder="ابحث عن المحافظة">
+          </ng-select>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-3 col-xs-12 group-select">
+        <div class="pos-relative">
+          <svg class="input-icon desktop-show" xmlns="http://www.w3.org/2000/svg" width="12.386" height="16.766" viewBox="0 0 12.386 16.766">
+            <path id="__TEMP__SVG__" d="M12.943,2.25C9.524,2.25,6.75,4.664,6.75,7.639c0,4.79,6.193,11.377,6.193,11.377s6.193-6.587,6.193-11.377C19.136,4.664,16.362,2.25,12.943,2.25Zm0,8.383a2.437,2.437,0,0,1-2.477-2.4,2.479,2.479,0,0,1,4.954,0A2.44,2.44,0,0,1,12.943,10.633Z" transform="translate(-6.75 -2.25)" fill="#c4c4c4"></path>
+          </svg>
+          <label class="txt-black txt-sm desktop-show">ابحث عن المنطقة</label>
+          <ng-select [items]="items" formControlName="area"
+             bindLabel="name" bindValue="value" (change)="selectArea()"
+            class="desktop-show form-control input-element txt-sm font-m "  placeholder="اختار المنطقة">
+          </ng-select>
+  
+          <ng-select [items]="items" formControlName="area"
+            bindLabel="name" bindValue="value" (change)="selectArea()"
+            class="mobile-show form-control input-element txt-sm font-m "  placeholder="ابحث عن المنطقة">
+          </ng-select>
+        </div>
+      </div>
+      
+      <div class="col-lg-2 col-md-2 col-xs-12">
+        <button class="btn  search-btn" type="button">{{'search' | translate}}</button>
+      </div>
+    </div>
+  </div>
+</form>

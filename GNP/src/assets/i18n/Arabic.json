@@ -1,0 +1,19 @@
+{
+  "home":"الرئيسية",
+  "services":"الخدمات",
+  "contactus":"اتصل بنا",
+  "company":"عن الشركة",
+  "offers":"عروض خاصة",
+  "login": "تسجيل دخول",
+  "register":"تسجيل جديد",
+  "logout":"تسجيل خروج",
+  "reservations":"الحجوزات",
+  "search":"ابحث",
+  "confirmPassRequired":"تأكيد كلمة السر مطلوبة",
+  "passwordRequired":"كلمة السر مطلوبة",
+  "genderRequired":"الجنس مطلوب",
+  "birthdateRequired":"تاريخ الميلاد مطلوب",
+  "emailRequired":"البريد الإلكتروني مطلوب",
+  "mobileRequired":"رقم الموبيل مطلوب",
+  "nameRequired":"الاسم كاملا مطلوب"
+}

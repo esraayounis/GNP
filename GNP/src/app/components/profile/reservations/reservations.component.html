@@ -1,0 +1,29 @@
+<mat-tab-group  #tabGroup (selectedTabChange)="tabChanged($event)"
+[selectedIndex]="selectedReservation" class="box-shadow reservation">
+<mat-tab label="current">
+    <ng-template mat-tab-label>0<br> الحجوزات الحالية
+    </ng-template>
+    <div class="container-fluid not-found-data">
+        <img src="assets/imgs/profile/not-found-data.png">
+        <p>لا توجد بيانات متاحة</p>
+    </div>
+</mat-tab>
+
+<mat-tab label="previous">
+    <ng-template mat-tab-label>0<br>الحجوزات السابقة 
+    </ng-template>
+    <div class="container-fluid not-found-data">
+        <img src="assets/imgs/profile/not-found-data.png">
+        <p>لا توجد بيانات متاحة</p>
+    </div>
+</mat-tab>
+<mat-tab label="expired">
+    <ng-template mat-tab-label>0<br> الحجوزات الملغية
+    </ng-template>
+    <div class="container-fluid not-found-data">
+        <img src="assets/imgs/profile/not-found-data.png">
+        <p>لا توجد بيانات متاحة</p>
+    </div>
+</mat-tab>
+
+</mat-tab-group>

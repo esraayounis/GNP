@@ -1,0 +1,101 @@
+.txt-align-l{text-align: right;}
+
+.dir{direction: ltr;}
+
+.mar-r-20{margin-left:20px;
+    margin-right:unset;}
+
+.pad-r-40{ padding-left:40px;
+    padding-right:unset;}
+
+.navbar-nav{
+    padding-right :20px;
+    padding-left: unset;
+    
+}
+/* right */
+#nav-consult_clinic-tab,  #nav-residence-version-tab, #nav-visit_doctor-tab,
+#nav-exams_laboratories-tab,  #nav-conhome-tab{
+    border-radius: 10px 0px 0px 0px;
+}
+
+#nav-consult_home-tab, #nav-renewal-residence-tab, #nav-health-certificate-tab,
+ #nav-visit_jilis-tab, #nav-nursing_visit-tab, #nav-rays_holes-tab, #nav-concar-tab
+{
+    border-radius: 0px;
+}
+/* left */
+#nav-traffic-license-tab, #nav-traffic-license-tab, #nav-consult_video-tab,
+#nav-heart_exams-tab, #nav-home_services-tab, #nav-concar-tab2{
+    border-radius: 0px 10px 0px 0px;
+}
+
+/* sign up mob */
+
+#mat-tab-label-1-1{
+    border-radius: 0px 10px 0px 0px;
+}
+#mat-tab-label-1-0{
+    border-radius: 10px 0px 0px 0px;
+}
+
+.show-menu{
+    left: 0;
+    top: 0;
+    right:unset;
+}
+
+.mar-radio{
+    margin:0 20px 0 10px;
+}
+
+/* Ng Select Style */
+
+.ng-select.ng-select-opened>.ng-select-container .ng-arrow-wrapper .ng-arrow{
+    right: -20px;
+    left:unset;
+}
+
+.ng-select .ng-arrow-wrapper .ng-arrow {
+    right: 20px;
+    left: unset;
+}
+
+.mobile-show .ng-select.ng-select-opened>.ng-select-container .ng-arrow-wrapper .ng-arrow{
+    right: -6px;
+    left:unset;
+}
+
+.mobile-show  .ng-select .ng-arrow-wrapper .ng-arrow {
+    right: 6px;
+    left: unset;
+}
+.input-icon
+{
+    right: auto;
+    left: 12px;
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+
+.ng-select-container.ng-has-value{
+    top:20px;
+    left:20px;
+    right:auto;
+}
+
+.group-select label{
+    left: 10px;
+    right:auto;
+}
+
+.top-13 .ng-select-container.ng-has-value{
+    top:13px!important;
+    right: auto;
+    left: unset;
+}
+
+}
