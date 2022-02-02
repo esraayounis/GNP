@@ -124,7 +124,7 @@ export class SignUpComponent implements OnInit {
     }
     else{
       this.loading = true;
-      this.router.navigate(['/home'])
+      this.router.navigate(['/profile'])
     }
   };
 

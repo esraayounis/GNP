@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit {
   get fireValidation() { return this.loginForm.controls; }
 
   onClickSubmit(data:any) {
-    debugger
     this.submitted  = true;
     this.loading = true;
     this.notValidHere = new Array();

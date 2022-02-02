@@ -1,18 +1,33 @@
 .txt-align-l{text-align: right;}
 
+.float-left{float:right;}
+
 .dir{direction: ltr;}
 
 .mar-r-20{margin-left:20px;
     margin-right:unset;}
 
-.pad-r-40{ padding-left:40px;
-    padding-right:unset;}
+.pad-r-40{ 
+   padding-left:40px;
+   padding-right:unset;
+}
+
+.pad-r-15{
+    padding-right:unset;
+    padding-left:15px;
+  }
 
 .navbar-nav{
     padding-right :20px;
     padding-left: unset;
     
 }
+
+.change-pass{
+    left: unset;
+    right:15px;
+}
+
 /* right */
 #nav-consult_clinic-tab,  #nav-residence-version-tab, #nav-visit_doctor-tab,
 #nav-exams_laboratories-tab,  #nav-conhome-tab{
@@ -76,6 +91,11 @@
     left: 12px;
 }
 
+
+div.content {
+    margin-left: 300px;
+    margin-right: unset;
+}
 
 
 @media screen and (min-width: 768px) {

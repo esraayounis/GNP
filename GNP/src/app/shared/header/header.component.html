@@ -5,7 +5,7 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div *ngIf="showCollapseMenu == false" class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav  mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">{{'home' | translate}}</a>
@@ -36,10 +36,53 @@
           <a class="lang englishLang" (click)="changeLangage('English')" *ngIf="langCheckerEn"><b>EN</b></a>
         </div>
       </div>
+      <div *ngIf="showCollapseMenu">
+        <div class="main">
+          <label class="menu-button-wrapper" for="">
+            <input type="checkbox" class="menu-button">
+            <div class="icon-wrapper">
+              <label class="hamburger">
+                <input class="hamburger-input" type="checkbox">
+                <img src="assets/imgs/profile/menu.svg">
+                <span class="hamburger-line first"></span>
+                <span class="hamburger-line second"></span>
+                <span class="hamburger-line third"></span>
+              </label>
+            </div>
+            <div class="item-list">
+              <ul class="navbar-nav  mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">{{'home' | translate}}</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{'services' | translate}}
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">{{'company' | translate}} </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">{{'offers' | translate}}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">{{'contactus' | translate}}</a>
+                </li>
+              </ul>
+            </div>
+          </label>
+        </div>
+      </div>
 
       <div class="float-left" >
-        <button *ngIf="displayUSer == false"  class="btn btn-outline-light mr" type="button" (click)="signUp()">{{'register' | translate}}</button>
-        <button *ngIf="displayUSer == false"  class="btn btn-outline-light" type="button"  (click)="login()" >{{'login' | translate}}</button>
+        <button *ngIf="displayUSer == false && showCollapseMenu == false"  class="btn btn-outline-light mr" type="button" (click)="signUp()">{{'register' | translate}}</button>
+        <button *ngIf="displayUSer == false && showCollapseMenu == false"  class="btn btn-outline-light" type="button"  (click)="login()" >{{'login' | translate}}</button>
         <label *ngIf="displayUSer == true" class="txt-white">{{myLoogedUser}}</label>
         <button *ngIf="displayUSer == true"  class="btn btn-outline-light mr" type="button" (click)="onLogout()">{{'logout' | translate}}</button>
       </div>

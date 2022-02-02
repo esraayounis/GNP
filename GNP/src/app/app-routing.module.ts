@@ -21,7 +21,9 @@ import { LabsComponent } from './components/medical-examinations/labs/labs.compo
 import { MedicalExaminationsComponent } from './components/medical-examinations/medical-examinations.component';
 import { RaysComponent } from './components/medical-examinations/rays/rays.component';
 import { SignUpMobileComponent } from './components/mobile-mode/sign-up/sign-up-mobile.component';
+import { FaviortsComponent } from './components/profile/faviorts/faviorts.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ReservationsComponent } from './components/profile/reservations/reservations.component';
 import { PrivateClinicsComponent } from './components/services-representaive/private-clinics/private-clinics.component';
 import { ServicesRepresentaiveComponent } from './components/services-representaive/services-representaive.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
@@ -97,6 +99,8 @@ const routes: Routes = [
     }]
   },
   { path: 'profile', component: ProfileComponent },
+  { path: 'reservations', component: ReservationsComponent },
+  { path: 'faviorts', component: FaviortsComponent }
 ];
 
 @NgModule({

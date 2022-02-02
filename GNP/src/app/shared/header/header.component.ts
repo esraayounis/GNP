@@ -2,10 +2,11 @@ import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { TranslateService } from "@ngx-translate/core";
 import { DOCUMENT } from "@angular/common";
 import { Inject } from "@angular/core";
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthententicationService } from 'src/app/core/services/authententication.service';
 import { ShareDataService } from 'src/app/core/services/share-data.service';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -26,15 +27,31 @@ export class HeaderComponent implements OnInit {
   langCheckerAr = false;
   langCheckerEn = true;
   isLoggedIn:any;
-  routerMenu: string="";
+  currentRoute: string="";
+  showCollapseMenu = false;
 
 
   constructor(private router: Router, public authService: AuthententicationService,
     private translateService: TranslateService,  @Inject(DOCUMENT) private document: Document,
     private cdRef: ChangeDetectorRef,  private data: ShareDataService,
     @Inject(DOCUMENT) private _document: Document) 
-  { 
-      this.routerMenu = router.url; 
+   { 
+      this.currentRoute = router.url;
+      this.router.events
+      .pipe(filter((rs): rs is NavigationEnd => rs instanceof NavigationEnd))
+      .subscribe(event => {
+        this.currentRoute = event.url;          
+        console.log( this.currentRoute)
+        let activeRoute = this.currentRoute.substring(1);
+        if(activeRoute == 'profile')
+        {
+          this.showCollapseMenu = true;
+        }
+        else{
+          this.showCollapseMenu = false;
+        }
+        console.log(activeRoute);
+      })
       let myStorage = window.localStorage;
       this.mycurrentLangu = myStorage.getItem("currentLanguage");
       console.log(this.mycurrentLangu)

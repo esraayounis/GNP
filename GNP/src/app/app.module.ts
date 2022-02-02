@@ -88,7 +88,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     PrivateClinicsComponent,
     ServicesRepresentaiveComponent,
     OffersComponent,
-    SignUpMobileComponent,
+    SignUpMobileComponent
   
   ],
   imports: [

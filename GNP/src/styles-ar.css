@@ -1,15 +1,28 @@
 .txt-align-l{text-align: left;}
 
+.float-left{float:left;}
+
 .dir{direction: rtl;}
 
 .mar-r-20{margin-right:20px;margin-left:unset;}
 
 .pad-r-40{ padding-right:40px;
-padding-left: unset;}
+  padding-left: unset;
+}
 
 .navbar-nav{
-    padding-left :20px;
-    padding-right: unset;
+  padding-left :20px;
+  padding-right: unset;
+}
+
+.pad-r-15{
+  padding-right:15px;
+  padding-left:unset;
+}
+
+.change-pass{
+    left: 15px;
+    right:unset;
 }
 
 /* right */
@@ -80,7 +93,10 @@ padding-left: unset;}
 
 .slick-slider .slick-track, .slick-slider .slick-list { direction: ltr; }
 
-
+div.content {
+    margin-right: 300px;
+    margin-left:unset;
+}
 
 @media screen and (min-width: 768px) {
     
