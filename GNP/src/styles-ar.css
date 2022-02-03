@@ -25,6 +25,11 @@
     right:unset;
 }
 
+.menu-button-wrapper {
+    right: -75px;
+    left:unset;
+}
+
 /* right */
 #nav-consult_clinic-tab,  #nav-residence-version-tab, #nav-visit_doctor-tab,
 #nav-exams_laboratories-tab,  #nav-conhome-tab{

@@ -2,9 +2,7 @@
     <div class="container-fluid">
         
       <img class="navbar-brand" (click)="goHome()" src="assets/imgs/home/logo.png">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    
       <div *ngIf="showCollapseMenu == false" class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav  mb-2 mb-lg-0">
           <li class="nav-item">
@@ -31,30 +29,23 @@
             <a class="nav-link" href="#">{{'contactus' | translate}}</a>
           </li>
         </ul>
-        <div >
-          <a class="lang arabicLang" (click)="changeLangage('Arabic')" *ngIf="langCheckerAr"><b>عربي</b></a>
-          <a class="lang englishLang" (click)="changeLangage('English')" *ngIf="langCheckerEn"><b>EN</b></a>
-        </div>
       </div>
-      <div *ngIf="showCollapseMenu">
+      <div *ngIf="showCollapseMenu" class="col-6">
         <div class="main">
           <label class="menu-button-wrapper" for="">
             <input type="checkbox" class="menu-button">
             <div class="icon-wrapper">
               <label class="hamburger">
                 <input class="hamburger-input" type="checkbox">
-                <img src="assets/imgs/profile/menu.svg">
-                <span class="hamburger-line first"></span>
-                <span class="hamburger-line second"></span>
-                <span class="hamburger-line third"></span>
+                <img class="hamburger-line" src="assets/imgs/profile/menu.svg">
               </label>
             </div>
             <div class="item-list">
-              <ul class="navbar-nav  mb-2 mb-lg-0">
+              <ul class="navbar-nav">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">{{'home' | translate}}</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown ">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {{'services' | translate}}
                   </a>
@@ -79,7 +70,10 @@
           </label>
         </div>
       </div>
-
+      <div >
+        <a class="lang arabicLang" (click)="changeLangage('Arabic')" *ngIf="langCheckerAr"><b>عربي</b></a>
+        <a class="lang englishLang" (click)="changeLangage('English')" *ngIf="langCheckerEn"><b>EN</b></a>
+      </div>
       <div class="float-left" >
         <button *ngIf="displayUSer == false && showCollapseMenu == false"  class="btn btn-outline-light mr" type="button" (click)="signUp()">{{'register' | translate}}</button>
         <button *ngIf="displayUSer == false && showCollapseMenu == false"  class="btn btn-outline-light" type="button"  (click)="login()" >{{'login' | translate}}</button>
